@@ -1,0 +1,17 @@
+---
+// Renders a plain string, turning `backticks` into inline <code>. Enough for short bios; no HTML injection.
+interface Props {
+  text: string;
+}
+const parts = Astro.props.text.split(/(`[^`]+`)/);
+---
+
+{
+  parts.map((part) =>
+    part.startsWith('`') && part.endsWith('`') ? (
+      <code class="border-2 border-ink bg-accent px-1 font-mono text-[0.85em] text-on-accent">{part.slice(1, -1)}</code>
+    ) : (
+      part
+    ),
+  )
+}

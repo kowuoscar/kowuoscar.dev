@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import RichText from '../components/RichText.astro';
+import { localizePath, t, type Locale } from '../i18n/ui';
+import { experience, profile, skills } from '../data/profile';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<BaseLayout locale={locale} title={t(locale, 'home.title')} description={t(locale, 'home.description')}>
+  <Hero locale={locale} />
+
+  <section class="card mt-7" aria-labelledby="about">
+    <h2 id="about" class="section-label mb-3.5">{t(locale, 'about.title')}</h2>
+    <p class="text-[19px] leading-relaxed"><RichText text={profile.bio[locale]} /></p>
+  </section>
+
+  <section class="card mt-7" aria-labelledby="experience">
+    <h2 id="experience" class="section-label mb-3.5">{t(locale, 'experience.title')}</h2>
+    <ol class="flex flex-col gap-3">
+      {
+        experience.map((role) => (
+          <li class="grid gap-x-4 sm:grid-cols-[72px_1fr]">
+            <span class="font-mono text-[13px] text-muted">{role.years}</span>
+            <span>
+              <span class="font-bold">{role.title}</span> · {role.company}
+              <span class="block text-muted">{role.summary[locale]}</span>
+            </span>
+          </li>
+        ))
+      }
+    </ol>
+    <a href={localizePath(locale, '/experience')} class="btn mt-5">{t(locale, 'experience.full')} →</a>
+  </section>
+
+  <section class="card mt-7" aria-labelledby="skills">
+    <h2 id="skills" class="section-label mb-3.5">{t(locale, 'skills.title')}</h2>
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        skills.map((group) => (
+          <div>
+            <h3 class="mb-2 font-bold">{group.label[locale]}</h3>
+            <ul class="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li class="chip">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

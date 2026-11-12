@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* Dark mode is driven by data-theme on <html> (set before paint in BaseLayout). */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ---------- Colour tokens: Lime / Violet duo ---------- */
+:root {
+  --bg: #F7F5EE;
+  --ink: #121212;
+  --card: #FFFFFF;
+  --muted: #555555;
+  --accent: #C6F432;    /* primary: CV button, logo, sticker */
+  --on-accent: #121212;
+  --accent2: #8B5CF6;   /* secondary: photo, section labels, hover */
+  --on-accent2: #FFFFFF;
+  --dot: #12121233;
+  color-scheme: light;
+}
+[data-theme=dark] {
+  --bg: #141318;
+  --ink: #F1EEF8;
+  --card: #1F1D26;
+  --muted: #ABA6B8;
+  --accent2: #A78BFA;
+  --on-accent2: #121212;
+  --dot: #F1EEF826;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-accent2: var(--accent2);
+  --color-on-accent2: var(--on-accent2);
+  --font-sans: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+/* ---------- Neobrutalist primitives ---------- */
+@utility brutal-border {
+  border: 3px solid var(--ink);
+}
+@utility brutal-shadow-sm {
+  box-shadow: 3px 3px 0 var(--ink);
+}
+@utility brutal-shadow {
+  box-shadow: 4px 4px 0 var(--ink);
+}
+@utility brutal-shadow-lg {
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+@layer components {
+  .card {
+    @apply brutal-border brutal-shadow-lg bg-card p-6;
+  }
+  .section-label {
+    @apply inline-block border-2 border-ink bg-accent2 px-2 py-0.5 font-mono text-[13px] tracking-widest text-on-accent2 uppercase;
+  }
+  .btn {
+    @apply brutal-border brutal-shadow inline-flex items-center gap-2 bg-card px-4 py-2.5 font-bold text-ink no-underline transition-[transform,box-shadow,background-color] duration-75;
+  }
+  .btn:hover {
+    @apply -translate-x-0.5 -translate-y-0.5 bg-accent2 text-on-accent2;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .btn-primary,
+  .btn-primary:hover {
+    @apply bg-accent text-on-accent;
+  }
+  .btn[aria-disabled='true'] {
+    @apply pointer-events-none opacity-50;
+  }
+  .chip {
+    @apply border-2 border-ink bg-bg px-2 py-0.5 font-mono text-[13px];
+  }
+}
+
+@layer base {
+  html {
+    @apply bg-bg font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--accent2);
+    outline-offset: 3px;
+  }
+}
+
+/* ---------- Drifting dotted background (bottom-left → top-right) ---------- */
+/* Oversized fixed layer translated by exactly one tile per cycle: seamless loop, compositor-only. */
+.dots {
+  position: fixed;
+  inset: -40px;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(var(--dot) 1.2px, transparent 1.4px) 0 0 / 20px 20px;
+  animation: dots-drift 3s linear infinite;
+}
+@keyframes dots-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(20px, -20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dots { animation: none; }
+}

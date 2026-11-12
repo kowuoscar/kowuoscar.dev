@@ -1,0 +1,56 @@
+---
+import { localizePath, t, type Locale } from '../i18n/ui';
+import { profile } from '../data/profile';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  locale: Locale;
+  /** Locale-agnostic path of the current page, e.g. "/experience". */
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+
+const links = [
+  { href: '/', label: t(locale, 'nav.home') },
+  { href: '/experience', label: t(locale, 'nav.experience') },
+];
+const soon = [t(locale, 'nav.blog'), t(locale, 'nav.projects')];
+---
+
+<header class="flex items-center gap-5 py-6">
+  <a
+    href={localizePath(locale, '/')}
+    class="brutal-border brutal-shadow-sm bg-accent px-2.5 py-1 font-bold text-on-accent no-underline"
+    aria-label={profile.name}>{profile.initials}</a
+  >
+  <nav class="flex flex-1 flex-wrap gap-x-5 gap-y-1" aria-label="Main">
+    {
+      links.map(({ href, label }) => (
+        <a
+          href={localizePath(locale, href)}
+          class="font-medium no-underline decoration-accent2 decoration-[3px] underline-offset-4 hover:underline aria-[current=page]:underline"
+          aria-current={path === href ? 'page' : undefined}
+        >
+          {label}
+        </a>
+      ))
+    }
+    {
+      soon.map((label) => (
+        <span class="hidden font-medium text-muted sm:inline">
+          {label} <span class="font-mono text-xs">({t(locale, 'nav.soon')})</span>
+        </span>
+      ))
+    }
+  </nav>
+  <a
+    href={localizePath(other, path)}
+    hreflang={other}
+    lang={other}
+    class="brutal-shadow-sm border-2 border-ink bg-card px-2.5 py-1 font-mono text-[13px] no-underline active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+    aria-label={t(locale, 'lang.switch')}>{t(locale, 'lang.switchShort')}</a
+  >
+  <ThemeToggle label={t(locale, 'theme.toggle')} />
+</header>

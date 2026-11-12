@@ -68,10 +68,14 @@ export function t(locale: Locale, key: UiKey): string {
   return ui[locale][key];
 }
 
-/** Prefix a locale-agnostic path ("/experience") for the given locale. */
+/**
+ * Prefix a locale-agnostic path ("/experience") for the given locale.
+ * Always ends with "/" — that is the URL Cloudflare serves directory pages at (no redirect hop).
+ */
 export function localizePath(locale: Locale, path: string): string {
-  const clean = path === '/' ? '' : path.replace(/\/$/, '');
-  return locale === defaultLocale ? clean || '/' : `/${locale}${clean}`;
+  const clean = path.replace(/^\/+|\/+$/g, '');
+  const prefix = locale === defaultLocale ? '' : `${locale}/`;
+  return `/${prefix}${clean ? `${clean}/` : ''}`;
 }
 
 /** Strip the locale prefix from a pathname, giving the locale-agnostic path. */

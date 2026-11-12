@@ -35,7 +35,7 @@ Settled during the grilling session of 2026-11-11 → 2026-11-12.
 ## Stack & infra
 - Astro (latest, from an empty minimal template — not a theme fork), Tailwind CSS, pnpm.
 - Public GitHub repo `kowuoscar.dev`.
-- Hosting: Cloudflare Pages via its Git integration (build + preview per PR). No Terraform for now.
+- Hosting: **Cloudflare Workers static assets** (Workers Builds Git integration — Cloudflare's recommended path over Pages). `wrangler.jsonc` serves `dist/`. Build `pnpm run build`, deploy `npx wrangler deploy`, non-production branches `npx wrangler versions upload`. No Terraform for now.
 - GitHub Actions for CI only: `astro check`, build, lychee link check. Renovate/Dependabot for updates.
 - Domain `kowuoscar.dev` (bought) served at apex; `www` redirects to apex via Cloudflare Redirect Rule.
 - Analytics: Cloudflare Web Analytics (cookieless).

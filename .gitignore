@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # Private CV sources (contain phone / personal email) — never commit
 *.docx
+
+# wrangler local state
+.wrangler/

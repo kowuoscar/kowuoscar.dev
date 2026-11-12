@@ -2,7 +2,7 @@
 
 Personal site of Oscar Kowu — Infrastructure Software Engineer (Go, Kubernetes operators, platform engineering).
 
-Built with [Astro](https://astro.build) and Tailwind CSS, deployed on Cloudflare Pages.
+Built with [Astro](https://astro.build) and Tailwind CSS, deployed on Cloudflare Workers (static assets).
 
 ## Develop
 
@@ -27,5 +27,12 @@ pnpm build    # static output in dist/
 
 ## Deploy
 
-Cloudflare Pages Git integration: build command `pnpm build`, output directory `dist`.
-Every push to `main` deploys production; every PR gets a preview URL. GitHub Actions only runs checks.
+Cloudflare Workers Builds (Git integration), configured by `wrangler.jsonc` (serves `dist/` as static assets):
+
+| Setting | Value |
+|---|---|
+| Build command | `pnpm run build` |
+| Deploy command (`main`) | `npx wrangler deploy` |
+| Non-production branches | `npx wrangler versions upload` (preview URL per branch) |
+
+GitHub Actions only runs checks.

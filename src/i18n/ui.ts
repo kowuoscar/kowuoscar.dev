@@ -30,7 +30,7 @@ export const ui = {
     'experience.description':
       'Career of Oscar Kowu: from backend engineering in Java to platform engineering with Go and Kubernetes.',
     'experience.education': 'Education',
-    'footer.built': 'Built with Astro · Deployed on Cloudflare Pages',
+    'footer.built': 'Built with Astro · Deployed on Cloudflare',
     'footer.source': 'Source',
   },
   fr: {
@@ -57,7 +57,7 @@ export const ui = {
     'experience.description':
       "Parcours d'Oscar Kowu : du développement backend en Java au platform engineering avec Go et Kubernetes.",
     'experience.education': 'Formation',
-    'footer.built': 'Construit avec Astro · Déployé sur Cloudflare Pages',
+    'footer.built': 'Construit avec Astro · Déployé sur Cloudflare',
     'footer.source': 'Code source',
   },
 } as const satisfies Record<Locale, Record<string, string>>;

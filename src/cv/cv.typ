@@ -57,15 +57,12 @@
   )
 }
 
-#section(d.labels.summary)
-#rich(d.summary)
-
 #section(d.labels.experience)
 #for role in d.experience {
   block(breakable: false, below: 0.85em, {
     grid(
       columns: (1fr, auto),
-      [*#role.company* — #role.title],
+      [*#role.company*#if "companyDescription" in role [ #text(fill: muted)[(#role.companyDescription)]] — #role.title],
       mono(text(fill: muted, role.period + if "location" in role { " · " + role.location })),
     )
     v(-0.3em)

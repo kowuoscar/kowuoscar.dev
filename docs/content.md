@@ -7,7 +7,7 @@ Source of truth for site copy (and the reworked web CV). FR experience translati
 - Title: **Infrastructure Software Engineer**
 - Tagline: Go · Kubernetes Operators · Platform Engineering
 - Stats line: `8+ years · 15+ teams served · CKA`
-- Location: Nantes, France · Remote
+- Location: Nantes, France · Remote · Relocate OK (FR: Télétravail · Mobilité géographique possible)
 - Links: Website https://kowuoscar.dev (shown on the CV) · GitHub https://github.com/kowuoscar · LinkedIn https://www.linkedin.com/in/oscar-kowu/ · Email hello@kowuoscar.dev
 - CKA (Credly, verified 2026-11-19): https://www.credly.com/badges/5ee1348f-e352-4c8c-a81c-a6a36c2c60bc/public_url
 
@@ -19,10 +19,11 @@ Source of truth for site copy (and the reworked web CV). FR experience translati
 ## Skills
 | Group (EN / FR) | Items |
 |---|---|
-| Platform & Kubernetes / Plateforme & Kubernetes | Kubernetes, Operators / controllers (Go), Helm, Argo CD, Docker, GitHub Actions |
 | Languages / Langages | Go, Java (8–21), C#, JavaScript |
-| Backend & data / Backend & données | Spring Boot, .NET, PostgreSQL, MySQL, Redis, Solace |
-| Cloud & observability / Cloud & observabilité | AWS, Grafana, Sentry |
+| Platform & DevOps / Plateforme & DevOps | AWS, Docker, Kubernetes, Operators, Helm, Argo CD (GitOps), GitHub Actions (CI/CD) |
+| Backend / Backend | Spring Boot, REST APIs, microservices, event-driven messaging (Solace), caching (Redis) |
+| Data / Données | PostgreSQL, MySQL |
+| Observability / Observabilité | Grafana, Sentry |
 | Certifications | CKA — Certified Kubernetes Administrator |
 
 ## Home: experience teaser (4 lines + "Full experience →")
@@ -31,52 +32,58 @@ Source of truth for site copy (and the reworked web CV). FR experience translati
 - 2021–24 — Senior Software Engineer · Sifflet — Data integration engine (Snowflake, Databricks…)
 - 2019–21 — Software Engineer · Nickel — Internal APIs → platform tooling; led a team of 3
 
-## Experience page (EN, validated)
-**Qlik — DevOps Engineer** · Sep 2025 – present · Remote (Nantes)
-- Build Kubernetes controllers in Go for the continuous delivery platform that engineering teams deploy through.
-- Improve the reliability, observability and clarity of the deployment pipeline.
-- Support engineers on CI/CD issues.
+## Experience — detailed (EN, validated)
+Full detail, shown on the CV. The site's Experience page will show a synthetic version (to come).
+
+**Qlik** (Data analytics and integration platform) **— DevOps Engineer** · Sep 2025 – present · Remote (Nantes)
+- Shipping the company's new CI/CD platform: building the Kubernetes controllers in Go that engineering teams deploy through.
+- Improving the reliability, observability and clarity of the deployment pipeline.
+- Providing support on CI/CD issues.
 
 **Qlik — Senior Software Engineer** · Sep 2024 – Sep 2025
-- Evolved and maintained the shared Java and .NET libraries through which Qlik's internal APIs are consumed, used by 15+ engineering teams.
-- Turned recurring cross-team pain points into reusable modules (access control, caching, encryption).
-- Defined the release cadence and onboarded teams onto the shared components.
+- Designed and shipped 5 shared backend modules (access control, encryption, caching, messaging, HTTP client) adopted by 15 engineering teams, replacing duplicated per-team implementations.
+- Identified recurring pain points across teams and turned them into reusable platform components.
+- Defined the release cadence for shared components, enabling smooth adoption with minimal disruption for consuming teams.
+- Onboarded the first teams hands-on, then wrote the adoption guide that let the remaining teams self-onboard.
 
-**Sifflet — Senior Software Engineer** · Dec 2021 – Jul 2024 · Remote (Paris)
-- Built the data integration engine: connecting to customer databases to extract schema catalogs, SQL query history for lineage, and system tables for usage analytics.
-- Led integrations with third-party platforms (Snowflake, Databricks…) and cut response times through caching and query optimisation.
-- Took part in cross-team code reviews and architecture design; ran technical interviews and onboarded new engineers.
+**Sifflet** (Data observability platform) **— Senior Software Engineer** · Dec 2021 – Jul 2024 · Remote (Paris)
+- Led development of 10+ connectors to third-party data platforms (Snowflake, Databricks, BigQuery, Redshift, dbt, Airflow, Looker, PostgreSQL, MySQL).
+- Cut the time to deliver a new connector from up to 2 weeks to 5 days at most.
+- Designed and built scalable REST APIs; improved integration response times through caching and query optimization.
+- Contributed to architecture design and cross-team code reviews.
+- Conducted 10+ technical interviews and onboarded 3 new engineers.
 
-**Nickel — Software Engineer** · Mar 2019 – Dec 2021 · Nantes
-- Built backend APIs for internal tools, then moved to platform work: the tooling the rest of the team depended on.
-- Increased unit and integration test coverage.
-- Led a team of 3 engineers delivering the partner onboarding platform.
-- Joined as Junior Software Engineer.
+**Nickel** (Neobank) **— Software Engineer** · Mar 2019 – Dec 2021 · Nantes
+- Built and maintained internal APIs supporting business and engineering teams.
+- Led a team of 3 engineers delivering the partner onboarding platform; onboarded 2 new engineers.
+- Raised unit and integration test coverage from 75% to 90%.
 
 **Education** — Master's in Computer Engineering, EPSI Lyon · Bachelor's in Software Engineering, SUPDECO Dakar
 
 **Accenture — Entry-Level Software Engineer** · Mar 2018 – Feb 2019 (FR: mars 2018 – févr. 2019): omitted on the site, kept as a single line on the CV (`earlierExperience` in `src/data/profile.ts`).
 
-## Experience page (FR, draft — to validate)
-**Qlik — DevOps Engineer** · sept. 2025 – aujourd'hui · Télétravail (Nantes)
-- Je développe en Go des controllers Kubernetes pour la plateforme de déploiement continu utilisée par les équipes d'ingénierie.
-- J'améliore la fiabilité, l'observabilité et la lisibilité du pipeline de déploiement.
-- J'accompagne les ingénieurs sur leurs problèmes de CI/CD.
+## Experience — detailed (FR, draft — to validate)
+**Qlik** (Plateforme d'analytique et d'intégration de données) **— DevOps Engineer** · sept. 2025 – aujourd'hui · Télétravail (Nantes)
+- Livraison de la nouvelle plateforme CI/CD de l'entreprise : développement en Go des controllers Kubernetes par lesquels les équipes d'ingénierie déploient.
+- Amélioration de la fiabilité, de l'observabilité et de la lisibilité du pipeline de déploiement.
+- Support aux équipes sur les problèmes de CI/CD.
 
 **Qlik — Senior Software Engineer** · sept. 2024 – sept. 2025
-- Évolution et maintenance des bibliothèques Java et .NET partagées par lesquelles passent les APIs internes de Qlik, utilisées par plus de 15 équipes.
-- Transformation de problèmes récurrents entre équipes en modules réutilisables (contrôle d'accès, cache, chiffrement).
-- Définition du rythme de release et accompagnement des équipes dans l'adoption des composants partagés.
+- Conception et livraison de 5 modules backend partagés (contrôle d'accès, chiffrement, cache, messaging, client HTTP), adoptés par 15 équipes et remplaçant des implémentations dupliquées dans chaque équipe.
+- Identification des problèmes récurrents entre équipes et transformation en composants de plateforme réutilisables.
+- Définition du rythme de release des composants partagés, pour une adoption fluide et sans perturbation pour les équipes consommatrices.
+- Accompagnement direct des premières équipes, puis rédaction du guide d'adoption qui a permis aux suivantes de s'intégrer en autonomie.
 
-**Sifflet — Senior Software Engineer** · déc. 2021 – juil. 2024 · Télétravail (Paris)
-- Conception du moteur d'intégration de données : connexion aux bases clientes pour extraire les catalogues de schémas, l'historique des requêtes SQL (lignage) et les tables système (analyse d'usage).
-- Pilotage des intégrations avec des plateformes tierces (Snowflake, Databricks…) et réduction des temps de réponse grâce au cache et à l'optimisation des requêtes.
-- Participation aux revues de code inter-équipes et aux choix d'architecture ; entretiens techniques et onboarding des nouveaux ingénieurs.
+**Sifflet** (Plateforme d'observabilité des données) **— Senior Software Engineer** · déc. 2021 – juil. 2024 · Télétravail (Paris)
+- Pilotage du développement de plus de 10 connecteurs vers des plateformes de données tierces (Snowflake, Databricks, BigQuery, Redshift, dbt, Airflow, Looker, PostgreSQL, MySQL).
+- Réduction du délai de livraison d'un nouveau connecteur de 2 semaines à 5 jours maximum.
+- Conception et développement d'APIs REST scalables ; réduction des temps de réponse des intégrations grâce au cache et à l'optimisation des requêtes.
+- Participation aux choix d'architecture et aux revues de code inter-équipes.
+- Plus de 10 entretiens techniques menés et onboarding de 3 nouveaux ingénieurs.
 
-**Nickel — Software Engineer** · mars 2019 – déc. 2021 · Nantes
-- Développement d'APIs backend pour les outils internes, puis passage au travail de plateforme : l'outillage dont dépendait le reste de l'équipe.
-- Augmentation de la couverture des tests unitaires et d'intégration.
-- Encadrement d'une équipe de 3 ingénieurs pour livrer la plateforme d'onboarding des partenaires.
-- Arrivé en tant que Junior Software Engineer.
+**Nickel** (Néobanque) **— Software Engineer** · mars 2019 – déc. 2021 · Nantes
+- Développement et maintenance d'APIs internes au service des équipes métier et techniques.
+- Encadrement d'une équipe de 3 ingénieurs pour livrer la plateforme d'onboarding des partenaires ; onboarding de 2 nouveaux ingénieurs.
+- Couverture des tests unitaires et d'intégration portée de 75 % à 90 %.
 
 **Formation** — Master en ingénierie informatique, EPSI Lyon · Bachelor en génie logiciel, SUPDECO Dakar

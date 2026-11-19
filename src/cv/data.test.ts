@@ -44,10 +44,22 @@ describe('cvData', () => {
     expect(experience.map((r) => r.company)).not.toContain('Accenture');
   });
 
-  it('localises the bio, skills, education and section labels', () => {
+  it('describes each company once, on its first consecutive role', () => {
+    const cv = cvData('en');
+    const qlik = cv.experience.filter((r) => r.company === 'Qlik');
+    expect(qlik).toHaveLength(2);
+    expect(qlik[0]!.companyDescription).toBe('Data analytics and integration platform');
+    expect(qlik[1]!.companyDescription).toBeUndefined();
+    expect(cv.experience.find((r) => r.company === 'Nickel')?.companyDescription).toBe('Neobank');
+  });
+
+  it('has no profile summary: the bio stays on the site only', () => {
+    expect(cvData('en')).not.toHaveProperty('summary');
+  });
+
+  it('localises the skills, education and section labels', () => {
     const en = cvData('en');
     const fr = cvData('fr');
-    expect(fr.summary).toBe(profile.bio.fr);
     expect(fr.skills.map((g) => g.label)).toEqual(skills.map((g) => g.label.fr));
     expect(fr.education).toEqual(education.map((e) => ({ degree: e.degree.fr, school: e.school })));
     expect(en.labels.experience).not.toBe(fr.labels.experience);

@@ -7,7 +7,10 @@ export const profile = {
   role: 'Infrastructure Software Engineer',
   tagline: 'Go · Kubernetes Operators · Platform Engineering',
   stats: { en: '8+ years · 15+ teams served · CKA', fr: '8+ ans · 15+ équipes accompagnées · CKA' } satisfies Localized,
-  location: { en: 'Nantes, France · Remote', fr: 'Nantes, France · Télétravail' } satisfies Localized,
+  location: {
+    en: 'Nantes, France · Remote · Relocate OK',
+    fr: 'Nantes, France · Télétravail · Mobilité géographique possible',
+  } satisfies Localized,
   links: {
     github: 'https://github.com/kowuoscar',
     linkedin: 'https://www.linkedin.com/in/oscar-kowu/',
@@ -30,21 +33,24 @@ export interface SkillGroup {
 }
 
 export const skills: SkillGroup[] = [
-  {
-    label: { en: 'Platform & Kubernetes', fr: 'Plateforme & Kubernetes' },
-    items: ['Kubernetes', 'Operators / controllers (Go)', 'Helm', 'Argo CD', 'Docker', 'GitHub Actions'],
-  },
   { label: { en: 'Languages', fr: 'Langages' }, items: ['Go', 'Java (8–21)', 'C#', 'JavaScript'] },
   {
-    label: { en: 'Backend & data', fr: 'Backend & données' },
-    items: ['Spring Boot', '.NET', 'PostgreSQL', 'MySQL', 'Redis', 'Solace'],
+    label: { en: 'Platform & DevOps', fr: 'Plateforme & DevOps' },
+    items: ['AWS', 'Docker', 'Kubernetes', 'Operators', 'Helm', 'Argo CD (GitOps)', 'GitHub Actions (CI/CD)'],
   },
-  { label: { en: 'Cloud & observability', fr: 'Cloud & observabilité' }, items: ['AWS', 'Grafana', 'Sentry'] },
+  {
+    label: { en: 'Backend', fr: 'Backend' },
+    items: ['Spring Boot', 'REST APIs', 'microservices', 'event-driven messaging (Solace)', 'caching (Redis)'],
+  },
+  { label: { en: 'Data', fr: 'Données' }, items: ['PostgreSQL', 'MySQL'] },
+  { label: { en: 'Observability', fr: 'Observabilité' }, items: ['Grafana', 'Sentry'] },
   { label: { en: 'Certifications', fr: 'Certifications' }, items: ['CKA — Certified Kubernetes Administrator'] },
 ];
 
 export interface Role {
   company: string;
+  /** What the company does, e.g. "Neobank". */
+  companyDescription: Localized;
   title: string;
   /** Short range for the home teaser, e.g. "2024–25". */
   years: string;
@@ -57,6 +63,7 @@ export interface Role {
 export const experience: Role[] = [
   {
     company: 'Qlik',
+    companyDescription: { en: 'Data analytics and integration platform', fr: 'Plateforme d’analytique et d’intégration de données' },
     title: 'DevOps Engineer',
     years: '2025 —',
     period: { en: 'Sep 2025 – present', fr: 'sept. 2025 – aujourd’hui' },
@@ -67,19 +74,20 @@ export const experience: Role[] = [
     },
     highlights: {
       en: [
-        'Build Kubernetes controllers in Go for the continuous delivery platform that engineering teams deploy through.',
-        'Improve the reliability, observability and clarity of the deployment pipeline.',
-        'Support engineers on CI/CD issues.',
+        'Shipping the company’s new CI/CD platform: building the Kubernetes controllers in Go that engineering teams deploy through.',
+        'Improving the reliability, observability and clarity of the deployment pipeline.',
+        'Providing support on CI/CD issues.',
       ],
       fr: [
-        'Je développe en Go des controllers Kubernetes pour la plateforme de déploiement continu utilisée par les équipes d’ingénierie.',
-        'J’améliore la fiabilité, l’observabilité et la lisibilité du pipeline de déploiement.',
-        'J’accompagne les ingénieurs sur leurs problèmes de CI/CD.',
+        'Livraison de la nouvelle plateforme CI/CD de l’entreprise : développement en Go des controllers Kubernetes par lesquels les équipes d’ingénierie déploient.',
+        'Amélioration de la fiabilité, de l’observabilité et de la lisibilité du pipeline de déploiement.',
+        'Support aux équipes sur les problèmes de CI/CD.',
       ],
     },
   },
   {
     company: 'Qlik',
+    companyDescription: { en: 'Data analytics and integration platform', fr: 'Plateforme d’analytique et d’intégration de données' },
     title: 'Senior Software Engineer',
     years: '2024–25',
     period: { en: 'Sep 2024 – Sep 2025', fr: 'sept. 2024 – sept. 2025' },
@@ -89,19 +97,22 @@ export const experience: Role[] = [
     },
     highlights: {
       en: [
-        'Evolved and maintained the shared Java and .NET libraries through which Qlik’s internal APIs are consumed, used by 15+ engineering teams.',
-        'Turned recurring cross-team pain points into reusable modules (access control, caching, encryption).',
-        'Defined the release cadence and onboarded teams onto the shared components.',
+        'Designed and shipped 5 shared backend modules (access control, encryption, caching, messaging, HTTP client) adopted by 15 engineering teams, replacing duplicated per-team implementations.',
+        'Identified recurring pain points across teams and turned them into reusable platform components.',
+        'Defined the release cadence for shared components, enabling smooth adoption with minimal disruption for consuming teams.',
+        'Onboarded the first teams hands-on, then wrote the adoption guide that let the remaining teams self-onboard.',
       ],
       fr: [
-        'Évolution et maintenance des bibliothèques Java et .NET partagées par lesquelles passent les APIs internes de Qlik, utilisées par plus de 15 équipes.',
-        'Transformation de problèmes récurrents entre équipes en modules réutilisables (contrôle d’accès, cache, chiffrement).',
-        'Définition du rythme de release et accompagnement des équipes dans l’adoption des composants partagés.',
+        'Conception et livraison de 5 modules backend partagés (contrôle d’accès, chiffrement, cache, messaging, client HTTP), adoptés par 15 équipes et remplaçant des implémentations dupliquées dans chaque équipe.',
+        'Identification des problèmes récurrents entre équipes et transformation en composants de plateforme réutilisables.',
+        'Définition du rythme de release des composants partagés, pour une adoption fluide et sans perturbation pour les équipes consommatrices.',
+        'Accompagnement direct des premières équipes, puis rédaction du guide d’adoption qui a permis aux suivantes de s’intégrer en autonomie.',
       ],
     },
   },
   {
     company: 'Sifflet',
+    companyDescription: { en: 'Data observability platform', fr: 'Plateforme d’observabilité des données' },
     title: 'Senior Software Engineer',
     years: '2021–24',
     period: { en: 'Dec 2021 – Jul 2024', fr: 'déc. 2021 – juil. 2024' },
@@ -112,19 +123,24 @@ export const experience: Role[] = [
     },
     highlights: {
       en: [
-        'Built the data integration engine: connecting to customer databases to extract schema catalogs, SQL query history for lineage, and system tables for usage analytics.',
-        'Led integrations with third-party platforms (Snowflake, Databricks…) and cut response times through caching and query optimisation.',
-        'Took part in cross-team code reviews and architecture design; ran technical interviews and onboarded new engineers.',
+        'Led development of 10+ connectors to third-party data platforms (Snowflake, Databricks, BigQuery, Redshift, dbt, Airflow, Looker, PostgreSQL, MySQL).',
+        'Cut the time to deliver a new connector from up to 2 weeks to 5 days at most.',
+        'Designed and built scalable REST APIs; improved integration response times through caching and query optimization.',
+        'Contributed to architecture design and cross-team code reviews.',
+        'Conducted 10+ technical interviews and onboarded 3 new engineers.',
       ],
       fr: [
-        'Conception du moteur d’intégration de données : connexion aux bases clientes pour extraire les catalogues de schémas, l’historique des requêtes SQL (lignage) et les tables système (analyse d’usage).',
-        'Pilotage des intégrations avec des plateformes tierces (Snowflake, Databricks…) et réduction des temps de réponse grâce au cache et à l’optimisation des requêtes.',
-        'Participation aux revues de code inter-équipes et aux choix d’architecture ; entretiens techniques et onboarding des nouveaux ingénieurs.',
+        'Pilotage du développement de plus de 10 connecteurs vers des plateformes de données tierces (Snowflake, Databricks, BigQuery, Redshift, dbt, Airflow, Looker, PostgreSQL, MySQL).',
+        'Réduction du délai de livraison d’un nouveau connecteur de 2 semaines à 5 jours maximum.',
+        'Conception et développement d’APIs REST scalables ; réduction des temps de réponse des intégrations grâce au cache et à l’optimisation des requêtes.',
+        'Participation aux choix d’architecture et aux revues de code inter-équipes.',
+        'Plus de 10 entretiens techniques menés et onboarding de 3 nouveaux ingénieurs.',
       ],
     },
   },
   {
     company: 'Nickel',
+    companyDescription: { en: 'Neobank', fr: 'Néobanque' },
     title: 'Software Engineer',
     years: '2019–21',
     period: { en: 'Mar 2019 – Dec 2021', fr: 'mars 2019 – déc. 2021' },
@@ -135,16 +151,14 @@ export const experience: Role[] = [
     },
     highlights: {
       en: [
-        'Built backend APIs for internal tools, then moved to platform work: the tooling the rest of the team depended on.',
-        'Increased unit and integration test coverage.',
-        'Led a team of 3 engineers delivering the partner onboarding platform.',
-        'Joined as Junior Software Engineer.',
+        'Built and maintained internal APIs supporting business and engineering teams.',
+        'Led a team of 3 engineers delivering the partner onboarding platform; onboarded 2 new engineers.',
+        'Raised unit and integration test coverage from 75% to 90%.',
       ],
       fr: [
-        'Développement d’APIs backend pour les outils internes, puis passage au travail de plateforme : l’outillage dont dépendait le reste de l’équipe.',
-        'Augmentation de la couverture des tests unitaires et d’intégration.',
-        'Encadrement d’une équipe de 3 ingénieurs pour livrer la plateforme d’onboarding des partenaires.',
-        'Arrivé en tant que Junior Software Engineer.',
+        'Développement et maintenance d’APIs internes au service des équipes métier et techniques.',
+        'Encadrement d’une équipe de 3 ingénieurs pour livrer la plateforme d’onboarding des partenaires ; onboarding de 2 nouveaux ingénieurs.',
+        'Couverture des tests unitaires et d’intégration portée de 75 % à 90 %.',
       ],
     },
   },

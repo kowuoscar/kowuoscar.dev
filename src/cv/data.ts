@@ -10,13 +10,19 @@ export interface CvData {
   tagline: string;
   location: string;
   contact: { email: string; website: string; linkedin: string; github: string; cka: string };
-  /** Plain text; `backticks` mark inline code. */
-  summary: string;
-  experience: { company: string; title: string; period: string; location?: string; highlights: string[] }[];
+  experience: {
+    company: string;
+    /** Set on the first of consecutive roles at the same company only. */
+    companyDescription?: string;
+    title: string;
+    period: string;
+    location?: string;
+    highlights: string[];
+  }[];
   earlier: { company: string; title: string; period: string }[];
   skills: { label: string; items: string[] }[];
   education: { degree: string; school: string }[];
-  labels: { summary: string; experience: string; earlier: string; skills: string; education: string };
+  labels: { experience: string; earlier: string; skills: string; education: string };
 }
 
 export function cvData(locale: Locale): CvData {
@@ -33,9 +39,9 @@ export function cvData(locale: Locale): CvData {
       github: profile.links.github,
       cka: profile.links.cka,
     },
-    summary: profile.bio[locale],
-    experience: experience.map((role) => ({
+    experience: experience.map((role, i) => ({
       company: role.company,
+      ...(experience[i - 1]?.company !== role.company && { companyDescription: role.companyDescription[locale] }),
       title: role.title,
       period: role.period[locale],
       ...(role.location && { location: role.location[locale] }),
@@ -45,7 +51,6 @@ export function cvData(locale: Locale): CvData {
     skills: skills.map((group) => ({ label: group.label[locale], items: group.items })),
     education: education.map((e) => ({ degree: e.degree[locale], school: e.school })),
     labels: {
-      summary: t(locale, 'cv.summary'),
       experience: t(locale, 'cv.experience'),
       earlier: t(locale, 'cv.earlier'),
       skills: t(locale, 'cv.skills'),

@@ -1,6 +1,6 @@
 # kowuoscar.dev — validated copy
 
-Source of truth for site copy (and the reworked web CV). FR experience translation pending validation.
+Source of truth for site copy (and the reworked web CV). `src/data/content-sync.test.ts` checks that the experience highlights below match `src/data/profile.ts`.
 
 ## Identity
 - Name: **Oscar KOWU** (displayed "Oscar Kowu" unless decided otherwise)
@@ -64,7 +64,7 @@ Tags — Qlik DevOps: Go, Kubernetes, Operators, Argo CD, Helm, GitHub Actions �
 
 **Accenture — Entry-Level Software Engineer** · Mar 2018 – Feb 2019 (FR: mars 2018 – févr. 2019): omitted on the site, kept as a single line on the CV (`earlierExperience` in `src/data/profile.ts`).
 
-## Experience — detailed (FR, draft — to validate)
+## Experience — detailed (FR, validated 2026-11-19)
 **Qlik** (Plateforme d'analytique et d'intégration de données) **— DevOps Engineer** · sept. 2025 – aujourd'hui · Télétravail (Nantes)
 - Livraison de la nouvelle plateforme CI/CD de l'entreprise : développement en Go des controllers Kubernetes par lesquels les équipes d'ingénierie déploient.
 - Amélioration de la fiabilité, de l'observabilité et de la lisibilité du pipeline de déploiement.

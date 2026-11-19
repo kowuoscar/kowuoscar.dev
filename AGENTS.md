@@ -27,5 +27,5 @@ Consult these guides before working on related tasks:
 - Backlog lives in Linear: project **Portfolio** (P-PRD-2, team Kowu Labs). Tickets labelled `content` need input from Oscar and block the ticket that integrates it.
 - Copy lives in `src/data/profile.ts` — keep it in sync with `docs/content.md`.
 - Every page exists in EN (`src/pages/*`) and FR (`src/pages/fr/*`); both render a shared view from `src/views/`.
-- The CV PDFs are generated, not hand-made: `pnpm build` first renders `src/cv/cv.typ` (Typst) from the profile data into `public/cv/` (gitignored), then runs `astro build`; `pnpm cv` does the CV step alone. Edit copy in `src/data/profile.ts`, layout in `cv.typ`. Tests: `pnpm test`.
+- The CV PDFs are generated, not hand-made: `pnpm build` first renders `src/cv/cv.typ` (Typst) from the profile data into `public/cv/` (gitignored), then runs `astro build`; `pnpm cv` does the CV step alone. Same for the share images (`og:image`): rendered into `public/og/` (gitignored), `pnpm og` alone. Edit copy in `src/data/profile.ts`; layout in `src/cv/cv.typ` (CV) and `src/og/card.ts` (share image). Tests: `pnpm test`.
 - Never commit `*.docx` CV sources (they contain private contact details).

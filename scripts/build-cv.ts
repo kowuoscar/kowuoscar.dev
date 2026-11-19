@@ -2,7 +2,7 @@
 // Runs before `astro build` (see package.json "build"), and alone with `pnpm cv`.
 // The PDFs are build outputs: gitignored, never committed.
 import { relative } from 'node:path';
-import { PUBLIC_DIR } from '../src/cv/available.ts';
+import { PUBLIC_DIR } from '../src/paths.ts';
 import { writeCvs } from '../src/cv/write.ts';
 
 for (const { locale, file, pages } of writeCvs(PUBLIC_DIR)) {

@@ -18,6 +18,7 @@ Settled during the grilling session of 2026-11-11 → 2026-11-12.
 - Photo and region shown; email via a dedicated alias.
 - Bio & skills: Claude drafts from LinkedIn summary, owner corrects.
 - CV: one PDF per language (EN/FR), served per page language. **Generated with Typst** from the site's profile data (`src/data/profile.ts`), so site and CV share one source; built in CI before `astro build`, PDFs never committed. Owner validates the rendered layout (decided 2026-11-19, replaces the Word export).
+- Share image (`og:image`): one 1200×630 PNG per language, a still of the hero (name, title, tagline, stats, domain; no location, it blurs at thumbnail size). **Generated at build** from the profile data with satori + resvg in the site's own fonts, from the static-WOFF `@fontsource/space-grotesk` and `@fontsource/jetbrains-mono` packages (Typst has no PNG export and can't read the site's WOFF2), PNGs never committed (decided 2026-11-19).
 - Later: blog (tags, RSS, ToC), projects. Search and season palettes are later bonuses.
 
 ## i18n

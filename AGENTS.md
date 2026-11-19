@@ -24,6 +24,7 @@ Consult these guides before working on related tasks:
 ## Project notes
 
 - Read `docs/decisions.md` (settled choices) and `docs/content.md` (validated copy) before changing the site.
+- Backlog lives in Linear: project **Portfolio** (P-PRD-2, team Kowu Labs). Tickets labelled `content` need input from Oscar and block the ticket that integrates it.
 - Copy lives in `src/data/profile.ts` — keep it in sync with `docs/content.md`.
 - Every page exists in EN (`src/pages/*`) and FR (`src/pages/fr/*`); both render a shared view from `src/views/`.
 - Never commit `*.docx` CV sources (they contain private contact details).

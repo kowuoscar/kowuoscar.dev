@@ -30,6 +30,8 @@ export const ui = {
     'experience.description':
       'Career of Oscar Kowu: from backend engineering in Java to platform engineering with Go and Kubernetes.',
     'experience.education': 'Education',
+    'experience.cvDetail': 'Full detail in the CV',
+    'experience.stack': 'Stack',
     'footer.built': 'Built with Astro · Deployed on Cloudflare',
     'footer.source': 'Source',
     'cv.experience': 'Experience',
@@ -61,6 +63,8 @@ export const ui = {
     'experience.description':
       "Parcours d'Oscar Kowu : du développement backend en Java au platform engineering avec Go et Kubernetes.",
     'experience.education': 'Formation',
+    'experience.cvDetail': 'Le détail complet est dans le CV',
+    'experience.stack': 'Stack',
     'footer.built': 'Construit avec Astro · Déployé sur Cloudflare',
     'footer.source': 'Code source',
     'cv.experience': 'Expérience professionnelle',

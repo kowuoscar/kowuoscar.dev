@@ -57,7 +57,10 @@ export interface Role {
   period: Localized;
   location?: Localized;
   summary: Localized;
+  /** Ordered by impact: the site shows the first ones, the CV all of them. */
   highlights: Record<keyof Localized, string[]>;
+  /** Tech stack, shown as coloured tags on the Experience page. */
+  tags: string[];
 }
 
 export const experience: Role[] = [
@@ -84,6 +87,7 @@ export const experience: Role[] = [
         'Support aux équipes sur les problèmes de CI/CD.',
       ],
     },
+    tags: ['Go', 'Kubernetes', 'Operators', 'Argo CD', 'Helm', 'GitHub Actions'],
   },
   {
     company: 'Qlik',
@@ -109,6 +113,7 @@ export const experience: Role[] = [
         'Accompagnement direct des premières équipes, puis rédaction du guide d’adoption qui a permis aux suivantes de s’intégrer en autonomie.',
       ],
     },
+    tags: ['Java', '.NET', 'Spring Boot', 'Redis', 'Solace'],
   },
   {
     company: 'Sifflet',
@@ -137,6 +142,7 @@ export const experience: Role[] = [
         'Plus de 10 entretiens techniques menés et onboarding de 3 nouveaux ingénieurs.',
       ],
     },
+    tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Snowflake', 'Databricks', 'BigQuery'],
   },
   {
     company: 'Nickel',
@@ -161,6 +167,7 @@ export const experience: Role[] = [
         'Couverture des tests unitaires et d’intégration portée de 75 % à 90 %.',
       ],
     },
+    tags: ['Java', 'Spring Boot', 'PostgreSQL'],
   },
 ];
 

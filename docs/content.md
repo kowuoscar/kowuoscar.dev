@@ -33,7 +33,9 @@ Source of truth for site copy (and the reworked web CV). FR experience translati
 - 2019–21 — Software Engineer · Nickel — Internal APIs → platform tooling; led a team of 3
 
 ## Experience — detailed (EN, validated)
-Full detail, shown on the CV. The site's Experience page will show a synthetic version (to come).
+Full detail, shown on the CV. Highlights are ordered by impact: the site's Experience page shows the first 2 of each role plus tech-stack tags.
+
+Tags — Qlik DevOps: Go, Kubernetes, Operators, Argo CD, Helm, GitHub Actions · Qlik Senior: Java, .NET, Spring Boot, Redis, Solace · Sifflet: Java, Spring Boot, PostgreSQL, Snowflake, Databricks, BigQuery · Nickel: Java, Spring Boot, PostgreSQL (first draft).
 
 **Qlik** (Data analytics and integration platform) **— DevOps Engineer** · Sep 2025 – present · Remote (Nantes)
 - Shipping the company's new CI/CD platform: building the Kubernetes controllers in Go that engineering teams deploy through.

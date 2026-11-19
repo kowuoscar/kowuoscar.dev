@@ -39,5 +39,5 @@ Settled during the grilling session of 2026-11-11 → 2026-11-12.
 - Hosting: **Cloudflare Workers static assets** (Workers Builds Git integration — Cloudflare's recommended path over Pages). `wrangler.jsonc` serves `dist/`. Build `pnpm run build`, deploy `npx wrangler deploy`, non-production branches `npx wrangler versions upload`. No Terraform for now.
 - GitHub Actions for CI only: `astro check`, build, lychee link check. Renovate/Dependabot for updates.
 - Domain `kowuoscar.dev` (bought) served at apex; `www` redirects to apex via Cloudflare Redirect Rule.
-- Analytics: Cloudflare Web Analytics (cookieless).
+- Analytics: Cloudflare Web Analytics (cookieless), **automatic setup**: Cloudflare injects the beacon at the edge on every page, so the repo holds no analytics snippet. Don't add one: it would count every visit twice.
 - `kowulabs.com` kept for separate labs/projects.

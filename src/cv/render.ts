@@ -23,5 +23,6 @@ export function renderCv(locale: Locale): RenderedCv {
     const diagnostics = compiled.takeError()?.shortDiagnostics ?? [];
     throw new Error(`cv.typ failed to compile (${locale}): ${JSON.stringify(diagnostics, null, 2)}`);
   }
+  if (doc.numOfPages < 1) throw new Error(`cv.typ rendered an empty document (${locale})`);
   return { pdf: compiler.pdf(doc), pages: doc.numOfPages, title: doc.title, authors: doc.authors };
 }

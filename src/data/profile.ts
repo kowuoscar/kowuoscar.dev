@@ -21,6 +21,8 @@ export const profile = {
   },
   /** Files expected in public/cv/. The button is disabled until the file exists. */
   cv: { en: '/cv/oscar-kowu-cv-en.pdf', fr: '/cv/oscar-kowu-cv-fr.pdf' } satisfies Localized,
+  /** Share images (og:image), generated into public/og/ by `pnpm build`. */
+  og: { en: '/og/oscar-kowu-en.png', fr: '/og/oscar-kowu-fr.png' } satisfies Localized,
   bio: {
     en: "I started on the backend, writing APIs. Somewhere along the way, I became more curious about what happens after `git push` than before it. That's where I work now: Kubernetes, CI/CD and the systems in between, turning them into something engineers trust rather than fear, so they can ship quickly and sleep well.",
     fr: "J'ai commencé côté backend, à écrire des APIs. En chemin, ce qui se passe après le `git push` a fini par m'intéresser plus que ce qui se passe avant. C'est là que je travaille aujourd'hui : Kubernetes, la CI/CD et les systèmes entre les deux. J'en fais quelque chose auquel les ingénieurs font confiance plutôt que quelque chose qu'ils redoutent, pour qu'ils livrent vite et dorment tranquilles.",

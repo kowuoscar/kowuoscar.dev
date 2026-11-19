@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # Generated CVs (pnpm cv) — build outputs, never commit
 public/cv/*.pdf
+
+# Generated share images (pnpm og) — build outputs, never commit
+public/og/

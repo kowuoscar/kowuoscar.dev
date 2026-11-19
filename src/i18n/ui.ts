@@ -32,6 +32,11 @@ export const ui = {
     'experience.education': 'Education',
     'footer.built': 'Built with Astro · Deployed on Cloudflare',
     'footer.source': 'Source',
+    'cv.summary': 'Profile',
+    'cv.experience': 'Experience',
+    'cv.earlier': 'Earlier',
+    'cv.skills': 'Skills',
+    'cv.education': 'Education',
   },
   fr: {
     'nav.home': 'Accueil',
@@ -59,6 +64,11 @@ export const ui = {
     'experience.education': 'Formation',
     'footer.built': 'Construit avec Astro · Déployé sur Cloudflare',
     'footer.source': 'Code source',
+    'cv.summary': 'Profil',
+    'cv.experience': 'Expérience professionnelle',
+    'cv.earlier': 'Auparavant',
+    'cv.skills': 'Compétences',
+    'cv.education': 'Formation',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 

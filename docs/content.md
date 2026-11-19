@@ -8,8 +8,8 @@ Source of truth for site copy (and the reworked web CV). FR experience translati
 - Tagline: Go · Kubernetes Operators · Platform Engineering
 - Stats line: `8+ years · 15+ teams served · CKA`
 - Location: Nantes, France · Remote
-- Links: GitHub https://github.com/kowuoscar · LinkedIn https://www.linkedin.com/in/oscar-kowu/ · Email hello@kowuoscar.dev
-- CKA (verify link on the sticker): https://www.credly.com/badges/5ee1348f-e352-4c8c-a81c-a6a36c2c60bc/public_url
+- Links: Website https://kowuoscar.dev (shown on the CV) · GitHub https://github.com/kowuoscar · LinkedIn https://www.linkedin.com/in/oscar-kowu/ · Email hello@kowuoscar.dev
+- CKA (Credly, verified 2026-11-19): https://www.credly.com/badges/5ee1348f-e352-4c8c-a81c-a6a36c2c60bc/public_url
 
 ## Bio (V2)
 **EN** — I started on the backend, writing APIs. Somewhere along the way, I became more curious about what happens after `git push` than before it. That's where I work now: Kubernetes, CI/CD and the systems in between, turning them into something engineers trust rather than fear, so they can ship quickly and sleep well.
@@ -55,7 +55,7 @@ Source of truth for site copy (and the reworked web CV). FR experience translati
 
 **Education** — Master's in Computer Engineering, EPSI Lyon · Bachelor's in Software Engineering, SUPDECO Dakar
 
-Accenture (Mar 2018 – Feb 2019): omitted on the site, kept as a single line on the CV.
+**Accenture — Entry-Level Software Engineer** · Mar 2018 – Feb 2019 (FR: mars 2018 – févr. 2019): omitted on the site, kept as a single line on the CV (`earlierExperience` in `src/data/profile.ts`).
 
 ## Experience page (FR, draft — to validate)
 **Qlik — DevOps Engineer** · sept. 2025 – aujourd'hui · Télétravail (Nantes)

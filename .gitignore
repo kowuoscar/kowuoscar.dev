@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # wrangler local state
 .wrangler/
+
+# Generated CVs (pnpm cv) — build outputs, never commit
+public/cv/*.pdf

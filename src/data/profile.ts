@@ -12,6 +12,7 @@ export const profile = {
     github: 'https://github.com/kowuoscar',
     linkedin: 'https://www.linkedin.com/in/oscar-kowu/',
     email: 'hello@kowuoscar.dev',
+    website: 'https://kowuoscar.dev',
     cka: 'https://www.credly.com/badges/5ee1348f-e352-4c8c-a81c-a6a36c2c60bc/public_url',
     source: 'https://github.com/kowuoscar/kowuoscar.dev',
   },
@@ -146,6 +147,15 @@ export const experience: Role[] = [
         'Arrivé en tant que Junior Software Engineer.',
       ],
     },
+  },
+];
+
+/** CV-only roles, one line each. The site omits them (docs/decisions.md). */
+export const earlierExperience: { company: string; title: string; period: Localized }[] = [
+  {
+    company: 'Accenture',
+    title: 'Entry-Level Software Engineer',
+    period: { en: 'Mar 2018 – Feb 2019', fr: 'mars 2018 – févr. 2019' },
   },
 ];
 

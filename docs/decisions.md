@@ -10,13 +10,13 @@ Settled during the grilling session of 2026-11-11 → 2026-11-12.
 > Final copy lives in [`content.md`](content.md).
 - Pages: Home (identity card + 4-line experience teaser) · **Experience** (dedicated page, Accenture omitted) · Blog (soon) · Projects (soon).
 - Hero adds a mono stats line `8+ years · 15+ teams served · CKA`; CKA sticker links to the Credly badge.
-- Downloadable CV = reworked **web** version (no phone, hello@kowuoscar.dev, typos fixed, title aligned with LinkedIn, CKA added, Accenture kept as one line), EN + FR. Owner lays it out in Word and exports PDFs. The original `.docx` must never be committed (gitignored).
+- Downloadable CV = reworked **web** version (no phone, hello@kowuoscar.dev, typos fixed, title aligned with LinkedIn, CKA added, Accenture kept as one line), EN + FR. The original `.docx` must never be committed (gitignored).
 - Single home page = the identity card: name, title, photo, 2–3 sentence bio, grouped skills, links (LinkedIn, GitHub, email alias), CV download.
 - Title: *Infrastructure Software Engineer · Go, Kubernetes Operators · Platform Engineering | CKA*.
 - No contact section / no form — links are enough.
 - Photo and region shown; email via a dedicated alias.
 - Bio & skills: Claude drafts from LinkedIn summary, owner corrects.
-- CV: one PDF per language (EN/FR), served per page language. Existing PDFs first; Typst-in-CI maybe later.
+- CV: one PDF per language (EN/FR), served per page language. **Generated with Typst** from the site's profile data (`src/data/profile.ts`), so site and CV share one source; built in CI before `astro build`, PDFs never committed. Owner validates the rendered layout (decided 2026-11-19, replaces the Word export).
 - Later: blog (tags, RSS, ToC), projects. Search and season palettes are later bonuses.
 
 ## i18n

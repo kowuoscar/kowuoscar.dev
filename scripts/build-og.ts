@@ -2,7 +2,7 @@
 // Runs before `astro build` (see package.json "build"), and alone with `pnpm og`.
 // The PNGs are build outputs: gitignored, never committed.
 import { relative } from 'node:path';
-import { PUBLIC_DIR } from '../src/cv/available.ts';
+import { PUBLIC_DIR } from '../src/paths.ts';
 import { writeOgImages } from '../src/og/write.ts';
 
 for (const { locale, file } of await writeOgImages(PUBLIC_DIR)) {

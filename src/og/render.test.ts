@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { OG_SIZE, renderOg } from './render.ts';
-
-const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+import { renderOg } from './render.ts';
+import { OG_SIZE } from './size.ts';
+import { PNG_SIGNATURE } from './png.test-helper.ts';
 
 describe('renderOg', () => {
   it.each(['en', 'fr'] as const)('renders the %s share image as a 1200×630 PNG', async (locale) => {

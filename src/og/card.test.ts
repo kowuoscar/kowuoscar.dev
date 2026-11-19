@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ogCard, type OgNode } from './card.ts';
+import { ogAlt, ogCard, type OgNode } from './card.ts';
 import { profile } from '../data/profile.ts';
 
 /** Every string the card draws, in document order. */
@@ -22,6 +22,11 @@ describe('ogCard', () => {
         new URL(profile.links.website).host,
       ]),
     );
+  });
+
+  it.each(['en', 'fr'] as const)('describes the image with the copy it draws (%s alt text)', (locale) => {
+    const alt = ogAlt(locale);
+    for (const text of [profile.name, profile.role, profile.tagline, profile.stats[locale]]) expect(alt).toContain(text);
   });
 
   it('localises the copy: the FR card does not carry the EN stats', () => {

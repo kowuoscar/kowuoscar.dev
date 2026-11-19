@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { writeOgImages } from './write.ts';
+import { PNG_SIGNATURE } from './png.test-helper.ts';
 import { profile } from '../data/profile.ts';
 import { locales } from '../i18n/ui.ts';
 
@@ -19,7 +20,7 @@ describe('writeOgImages', () => {
     expect(written.map((w) => w.locale)).toEqual([...locales]);
     for (const { locale, file } of written) {
       expect(file).toBe(join(dir, profile.og[locale]));
-      expect(readFileSync(file).subarray(1, 4).toString()).toBe('PNG');
+      expect(readFileSync(file).subarray(0, 8)).toEqual(PNG_SIGNATURE);
     }
   });
 });

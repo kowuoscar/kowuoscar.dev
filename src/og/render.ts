@@ -4,19 +4,17 @@ import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { Resvg } from '@resvg/resvg-js';
 import satori, { type SatoriOptions } from 'satori';
-import { ogCard } from './card.ts';
+import { MONO, ogCard, SANS } from './card.ts';
 import { OG_SIZE } from './size.ts';
 import type { Locale } from '../i18n/ui.ts';
-
-export { OG_SIZE };
 
 // The site's own typefaces, as static WOFF: satori doesn't read the variable WOFF2 the site ships.
 const require = createRequire(import.meta.url);
 const font = (pkg: string, file: string) => readFileSync(require.resolve(`${pkg}/files/${file}`));
 const fonts: SatoriOptions['fonts'] = [
-  { name: 'Space Grotesk', weight: 700, style: 'normal', data: font('@fontsource/space-grotesk', 'space-grotesk-latin-700-normal.woff') },
-  { name: 'JetBrains Mono', weight: 400, style: 'normal', data: font('@fontsource/jetbrains-mono', 'jetbrains-mono-latin-400-normal.woff') },
-  { name: 'JetBrains Mono', weight: 700, style: 'normal', data: font('@fontsource/jetbrains-mono', 'jetbrains-mono-latin-700-normal.woff') },
+  { name: SANS, weight: 700, style: 'normal', data: font('@fontsource/space-grotesk', 'space-grotesk-latin-700-normal.woff') },
+  { name: MONO, weight: 400, style: 'normal', data: font('@fontsource/jetbrains-mono', 'jetbrains-mono-latin-400-normal.woff') },
+  { name: MONO, weight: 700, style: 'normal', data: font('@fontsource/jetbrains-mono', 'jetbrains-mono-latin-700-normal.woff') },
 ];
 
 export async function renderOg(locale: Locale): Promise<Buffer> {

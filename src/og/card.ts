@@ -21,8 +21,9 @@ const VIOLET = '#8B5CF6';
 const INSET = 44;
 const SHADOW = 14;
 
-const SANS = 'Space Grotesk';
-const MONO = 'JetBrains Mono';
+/** Font family names: render.ts registers the files under these same names. */
+export const SANS = 'Space Grotesk';
+export const MONO = 'JetBrains Mono';
 
 const el = (type: string, style: OgNode['props']['style'], children?: OgNode['props']['children']): OgNode => ({
   type,
@@ -86,8 +87,15 @@ const photo = div(
   ],
 );
 
-const line = (text: string, style: OgNode['props']['style']) =>
+const mutedMono = (text: string, style: OgNode['props']['style']) =>
   div({ fontFamily: MONO, color: MUTED, whiteSpace: 'nowrap', ...style }, text);
+
+const host = new URL(profile.links.website).host;
+
+/** og:image:alt — what the image shows, from the same copy, so it can't drift from it. */
+export function ogAlt(locale: Locale): string {
+  return `${profile.name}, ${profile.role}. ${profile.tagline}. ${profile.stats[locale]}. ${host}`;
+}
 
 export function ogCard(locale: Locale): OgNode {
   return div(
@@ -120,8 +128,8 @@ export function ogCard(locale: Locale): OgNode {
           div({ fontFamily: SANS, fontWeight: 700, fontSize: 88, lineHeight: 1, letterSpacing: -3 }, profile.name),
           div({ marginTop: 16, fontFamily: SANS, fontWeight: 700, fontSize: 36 }, profile.role),
           // No location line: at thumbnail size it wraps and blurs (the pages carry it).
-          line(profile.tagline, { marginTop: 14, fontSize: 23 }),
-          line(profile.stats[locale], { marginTop: 8, fontSize: 23 }),
+          mutedMono(profile.tagline, { marginTop: 14, fontSize: 23 }),
+          mutedMono(profile.stats[locale], { marginTop: 8, fontSize: 23 }),
           div(
             {
               marginTop: 36,
@@ -134,7 +142,7 @@ export function ogCard(locale: Locale): OgNode {
               fontWeight: 700,
               fontSize: 28,
             },
-            new URL(profile.links.website).host,
+            host,
           ),
         ]),
       ],

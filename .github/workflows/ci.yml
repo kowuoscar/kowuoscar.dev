@@ -25,6 +25,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Type check
         run: pnpm check
+      - name: Test
+        run: pnpm test
       - name: Build
         run: pnpm build
       - name: Check internal links

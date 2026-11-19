@@ -11,7 +11,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest run",
+    "cv": "node scripts/build-cv.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -23,7 +25,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "@myriaddreamin/typst-ts-node-compiler": "0.7.0",
     "typescript": "^6.0.3",
+    "vitest": "5.1.1",
     "wrangler": "^4.160.1"
   },
   "packageManager": "pnpm@9.15.9"

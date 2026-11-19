@@ -1,5 +1,6 @@
 ---
 import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { t, type Locale } from '../i18n/ui';
 import { profile } from '../data/profile';
 
@@ -8,9 +9,10 @@ interface Props {
 }
 const { locale } = Astro.props;
 
-// Build-time check: the CV button stays disabled until the PDF is dropped into public/cv/.
+// Build-time check: the CV button stays disabled until `pnpm cv` has generated the PDF into public/cv/.
+// Resolved from the project root: import.meta.url points into the bundled output at build time.
 const cvHref = profile.cv[locale];
-const cvAvailable = existsSync(new URL(`../../public${cvHref}`, import.meta.url));
+const cvAvailable = existsSync(join(process.cwd(), 'public', cvHref));
 
 const socials = [
   { label: 'LinkedIn', href: profile.links.linkedin },

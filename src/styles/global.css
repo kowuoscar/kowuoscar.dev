@@ -16,6 +16,16 @@
   --accent2: #8B5CF6;   /* secondary: photo, section labels, hover */
   --on-accent2: #FFFFFF;
   --dot: #12121233;
+  /* Tech-stack tags (Experience page): kept apart from the Lime/Violet duo; text stays --on-tag in both themes. */
+  --tag-0: #FFD6A5; /* peach */
+  --tag-1: #FFADAD; /* coral */
+  --tag-2: #A0E7E5; /* aqua */
+  --tag-3: #B4D8FF; /* sky */
+  --tag-4: #FFF0A8; /* butter */
+  --tag-5: #FFC8DD; /* pink */
+  --tag-6: #E6D3BE; /* sand */
+  --tag-7: #9ED9C8; /* teal */
+  --on-tag: #121212;
   color-scheme: light;
 }
 [data-theme=dark] {
@@ -79,6 +89,11 @@
   }
   .chip {
     @apply border-2 border-ink bg-bg px-2 py-0.5 font-mono text-[13px];
+  }
+  .tag {
+    @apply border-2 border-ink px-2 py-0.5 font-mono text-[12px] font-medium;
+    background: var(--tag-bg);
+    color: var(--on-tag);
   }
 }
 

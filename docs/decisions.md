@@ -11,6 +11,7 @@ Settled during the grilling session of 2026-11-11 → 2026-11-12.
 - Pages: Home (identity card + 4-line experience teaser) · **Experience** (dedicated page, Accenture omitted) · Blog (soon) · Projects (soon).
 - Hero adds a mono stats line `8+ years · 15+ teams served · CKA`; CKA sticker links to the Credly badge.
 - Downloadable CV = reworked **web** version (no phone, hello@kowuoscar.dev, typos fixed, title aligned with LinkedIn, CKA added, Accenture kept as one line), EN + FR. Owner lays it out in Word and exports PDFs. The original `.docx` must never be committed (gitignored).
+- Experience page = synthetic view of the CV: per role, company description, the first 2 highlights (ordered by impact) and tech-stack tags; a button points to the CV for the full detail. Tags appear only there (not on home, not on the CV). Tag colours: 8-colour palette kept apart from the Lime/Violet duo, one colour per technology across the page, never repeated within a card (decided 2026-11-19).
 - Single home page = the identity card: name, title, photo, 2–3 sentence bio, grouped skills, links (LinkedIn, GitHub, email alias), CV download.
 - Title: *Infrastructure Software Engineer · Go, Kubernetes Operators · Platform Engineering | CKA*.
 - No contact section / no form — links are enough.

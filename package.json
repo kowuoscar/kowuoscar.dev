@@ -17,7 +17,7 @@
     "og": "node scripts/build-og.ts"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/sitemap": "^3.7.5",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource-variable/space-grotesk": "^5.3.0",
     "@fontsource/jetbrains-mono": "^5.3.0",
@@ -25,7 +25,7 @@
     "@myriaddreamin/typst-ts-node-compiler": "^0.7.0",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.3.5",
-    "astro": "^7.4.11",
+    "astro": "^7.4.12",
     "satori": "^0.63.2",
     "tailwindcss": "^4.3.5"
   },
